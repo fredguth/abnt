@@ -13,4 +13,6 @@ contributes:
         documentclass: abntex2
         format-resources:
           - abntex2-alf.bst
+        cite-method: natbib
+        biblio-style: abntex2-alf.bst
     lang: pt
