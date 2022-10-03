@@ -12,7 +12,9 @@ contributes:
       pdf:
         documentclass: abntex2
         format-resources:
-          - abntex2-alf.bst
+          - abntex2-num.bst
         cite-method: natbib
-        biblio-style: abntex2-alf.bst
-    lang: pt
+        natbiboptions: numbers
+        biblio-style: abntex2-num.bst
+      html:
+        lang: pt
