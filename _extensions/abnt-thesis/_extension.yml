@@ -1,5 +1,5 @@
 title: ABNT Thesis
-author: Charles Teague
+author: Fred Guth
 version: 0.1.0
 contributes:
   project:
@@ -11,10 +11,36 @@ contributes:
     format:
       pdf:
         documentclass: abntex2
+        classoption: 
+          # -- opções da classe memoir --
+          - 12pt				#  tamanho da fonte
+          - openright		#  capítulos começam em pág ímpar (insere página vazia caso preciso)
+          - twoside			#  para impressão em recto e verso. Oposto a oneside
+          - a4paper			#  tamanho do papel. 
+          #  -- opções da classe abntex2 --
+          # - chapter=TITLE	  	    #  títulos de capítulos convertidos em letras maiúsculas
+          # - section=TITLE 		    #  títulos de seções convertidos em letras maiúsculas
+          # - subsection=TITLE    	#  títulos de subseções convertidos em letras maiúsculas
+          # - subsubsection=TITLE   #  títulos de subsubseções convertidos em letras maiúsculas
+          #  -- opções do pacote babel --
+          - english			#  idioma adicional para hifenização
+          - french			#  idioma adicional para hifenização
+          - spanish			#  idioma adicional para hifenização
+          - brazil			#  o último idioma é o principal do documento
         format-resources:
           - abntex2-num.bst
+          - abntex2-alf.bst
+        template-partials:
+          - partials/title.tex
+          - partials/in-header.tex
+        #   - partials/before-body.tex
+        #   - partials/definitions.tex    
+        # include-before-body:
+        #   - partials/definitions.tex
+        include-in-header:
+          - partials/in-header.tex
         cite-method: natbib
-        natbiboptions: numbers
-        biblio-style: abntex2-num.bst
+        natbiboptions: numbers        # referências bibliográficas com citação numérica, para citação alfabética por autor-data use alf
+        biblio-style: abntex2-num.bst # referências bibliográficas com citação numérica, para citação alfabética por autor-data use abntex-alf.bst
       html:
-        lang: pt
+        lang: pt-BR

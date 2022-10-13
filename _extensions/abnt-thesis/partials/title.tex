@@ -1,0 +1,23 @@
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{$title$}
+\autor{$author$}
+\local{$book.abnt.local$}
+$if(book.abnt.data)$
+\data{$book.abnt.data$}
+$else$
+\data{$book.date$}
+$endif$
+\orientador{$book.abnt.orientador$}
+$if(book.abnt.coorientador)$
+\coorientador{$book.abnt.coorientador$}
+$endif$
+\instituicao{$book.abnt.instituicao$}
+\tipotrabalho{$book.abnt.tipotrabalho$}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Modelo canônico de trabalho monográfico acadêmico em conformidade com
+as normas ABNT apresentado à comunidade de usuários \LaTeX.}
+% ---
+
