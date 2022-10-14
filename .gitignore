@@ -1,8 +1,5 @@
 /.quarto/
-<<<<<<< HEAD
 .quarto
-tmp/*
+tmp
 _book
-=======
-tmp/*
->>>>>>> 511e442 (added customizations to abnt class)
+Modelo-Canônico-de-Tese-ABNT.tex
