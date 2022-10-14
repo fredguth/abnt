@@ -59,7 +59,7 @@
 \newcommand{\quadroname}{Quadro}
 \newcommand{\listofquadrosname}{Lista de quadros}
 
-\newfloat[chapter]{quadro}{loq}{\quadroname}
+\newfloat{quadro}{loq}{\quadroname}
 \newlistof{listofquadros}{loq}{\listofquadrosname}
 \newlistentry{quadro}{loq}{0}
 
@@ -69,7 +69,8 @@
 \renewcommand{\cftquadroname}{\quadroname\space}
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
 
-\setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
+\setfloatlocations{quadro}{hbtp}
+ % Ver https://github.com/abntex/abntex2/issues/176
 % ---
 
 % --- 

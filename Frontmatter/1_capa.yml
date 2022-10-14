@@ -1,0 +1,12 @@
+local: "Brasil"
+# data: # sobrepoe a data automática com o texto que estiver aqui
+orientador: "Prof. Dr. Fulano de Tal"
+coorientador: "Prof. Dr. Sicrano da Val" # opcional
+tipotrabalho: "Tese de Doutorado"
+instituicao: |
+  Universidade do Brasil -- UBr
+  \par
+  Faculdade de Arquitetura da Informação
+  \par
+  Programa de Pós-Graduação
+preambulo: "Modelo canônico de tese em conformidade com as normas da ABNT NBR 14724:2011."

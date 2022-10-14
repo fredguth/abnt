@@ -1,6 +1,7 @@
 title: ABNT Thesis
 author: Fred Guth
 version: 0.1.0
+quarto-required: ">=1.2.198"
 contributes:
   project:
     book:
@@ -11,7 +12,7 @@ contributes:
     format:
       pdf:
         documentclass: abntex2
-        classoption: 
+        classoption:
           # -- opções da classe memoir --
           - 12pt				#  tamanho da fonte
           - openright		#  capítulos começam em pág ímpar (insere página vazia caso preciso)
@@ -45,7 +46,9 @@ contributes:
           - outer=2cm
           - top=3cm
           - bottom=2cm
-        toc: false
+        toc: true
+        lof: true
+        lot: true
         cite-method: natbib
         natbiboptions: numbers        # referências bibliográficas com citação numérica, para citação alfabética por autor-data use alf
         biblio-style: abntex2-num.bst # referências bibliográficas com citação numérica, para citação alfabética por autor-data use abntex-alf.bst

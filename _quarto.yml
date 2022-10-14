@@ -1,6 +1,17 @@
 project:
   type: abnt-thesis
 
+abnt:
+  capa:
+  ficha:
+  folha:
+  dedicatoria:
+  agradecimentos:
+  epigrafe:
+  resumos:
+  abreviaturas:
+  simbolos:
+
 book:
   title: "Modelo Canônico de Tese ABNT"
   author: "Fred Guth"
@@ -8,34 +19,27 @@ book:
   date-format: YYYY
   chapters:
     - index.qmd
-    - intro.qmd
+    - introducao.qmd
+    part
     - summary.qmd
     - references.qmd
-bibliography: references.bib
-abnt:
-  local: "Brasil"
-  data: # sobrepoe a data automática com o texto que estiver aqui
-  orientador: "Prof. Dr. Fulano de Tal"
-  coorientador: "Prof. Dr. Sicrano da Val" # opcional
-  tipotrabalho: "Tese de Doutorado"
-  instituicao: Frontmatter/instituicao.qmd
-  preambulo: "Modelo canônico de tese em conformidade com as normas da ABNT NBR 14724:2011."
-  # fichacatalografica: # nome do pdf da ficha catalográfica
-  # folha de aprovacao: # nome do pdf da folha de aprovacao
+  site-url: https://fredguth.github.io/abnt/
+  repo-url: https://github.com/fredguth/abnt/exemplo
+  repo-actions: [edit, source, issue]
+  search: true
+
+bibliography: referencias.bib
+
+# Code execution settings in the case of inserted code notebooks and snippets
+execute:
+  echo: false
+  code-overflow: wrap
+
 format:
   html:
     theme: cosmo
   pdf:
-    include-in-header: 
-      text: |
-        \usepackage{lipsum}
-
-
-
-
-
-
-
+    keep-tex: true  # remover após desenvolvimento
 # 
 # project:
 #   type: book

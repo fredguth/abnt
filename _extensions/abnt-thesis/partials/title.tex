@@ -3,17 +3,27 @@
 % ---
 \titulo{$title$}
 \autor{$author$}
+
+$if(abnt.local)$
 \local{$abnt.local$}
+$endif$
+
 $if(abnt.data)$
 \data{$abnt.data$}
 $else$
 \data{$abnt.date$}
 $endif$
+
 \orientador{$abnt.orientador$}
+
 $if(abnt.coorientador)$
 \coorientador{$abnt.coorientador$}
 $endif$
+
+$if(abnt.instituicao)$
 \instituicao{$abnt.instituicao$}
+$endif$
+
 \tipotrabalho{$abnt.tipotrabalho$}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 

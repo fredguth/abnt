@@ -58,6 +58,19 @@ $else$
 \end{fichacatalografica}
 $endif$
 
+% ---
+% Dedicatória
+% ---
+$if(abnt.dedicatoria)$
+\begin{dedicatoria}
+    \vspace*{\fill}
+    \centering
+    \noindent
+    \textit{ $abnt.dedicatoria$} \vspace*{\fill}
+ \end{dedicatoria}
+ $endif$
+ % ---
+ 
 
 % \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
