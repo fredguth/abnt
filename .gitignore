@@ -1,4 +1,4 @@
 /.quarto/
-.quarto/*
+.quarto
 tmp/*
-_book/*
+_book
