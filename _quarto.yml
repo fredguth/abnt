@@ -19,8 +19,7 @@ book:
   date-format: YYYY
   chapters:
     - index.qmd
-    - introducao.qmd
-    part
+    - Chapters/introducao.qmd
     - summary.qmd
     - references.qmd
   site-url: https://fredguth.github.io/abnt/
