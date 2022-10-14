@@ -1,174 +1,235 @@
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
-\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+% ---
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
 
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
 
-\begin{titlepage}
-\begin{center}
 
-\vspace*{.06\textheight}
-{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
 
-\HRule \\[0.4cm] % Horizontal line
-{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
-\HRule \\[1.5cm] % Horizontal line
- 
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-$if(author.url)$
-\href{$author.url$}{\authorname} % Author name - remove the \href bracket to remove the link
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto*
+% ---
+
+% ---
+% Inserir a ficha bibliografica
+% ---
+
+$if(abnt.fichacatalografica)$
+\begin{fichacatalografica}
+    \includepdf{$abnt.fichacatalografica$}
+\end{fichacatalografica}
 $else$
-\authorname
+\begin{fichacatalografica}
+	\sffamily
+	\vspace*{\fill}					% Posição vertical
+	\begin{center}					% Minipage Centralizado
+	\fbox{\begin{minipage}[c][8cm]{13.5cm}		% Largura
+	\small
+	\imprimirautor
+	\hspace{1.0cm} \imprimirtitulo  / \imprimirautor. --
+	\imprimirlocal, \imprimirdata-
+	\hspace{1.0cm} \thelastpage p. : il. (algumas color.) ; 30 cm.\\
+	\hspace{1.0cm} \imprimirorientadorRotulo~\imprimirorientador\\
+	\hspace{1.0cm}
+	\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
+	\imprimirdata.}\\
+	\hspace{1.0cm}
+		1. Palavra-chave1.
+		2. Palavra-chave2.
+		2. Palavra-chave3.
+		I. Orientador.
+		II. Universidade xxx.
+		III. Faculdade de xxx.
+		IV. Título
+	\end{minipage}}
+	\end{center}
+\end{fichacatalografica}
 $endif$
-\end{flushleft}
-\end{minipage}
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushright} \large
-\emph{Supervisor:} \\
-$if(book.supervisor.url)$%
-\href{$book.supervisor.url$}{\supname} % Supervisor name - remove the \href bracket to remove the link  
-$else$%
-\supname
-$endif$
-\end{flushright}
-\end{minipage}\\[3cm]
+
+
+% \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+% \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+% %----------------------------------------------------------------------------------------
+% %	TITLE PAGE
+% %----------------------------------------------------------------------------------------
+
+% \begin{titlepage}
+% \begin{center}
+
+% \vspace*{.06\textheight}
+% {\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+% \textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+
+% \HRule \\[0.4cm] % Horizontal line
+% {\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+% \HRule \\[1.5cm] % Horizontal line
  
-\vfill
-
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
-\groupname\\
-\deptname\\[2cm] % Research group name and department name
+% \begin{minipage}[t]{0.4\textwidth}
+% \begin{flushleft} \large
+% \emph{Author:}\\
+% $if(author.url)$
+% \href{$author.url$}{\authorname} % Author name - remove the \href bracket to remove the link
+% $else$
+% \authorname
+% $endif$
+% \end{flushleft}
+% \end{minipage}
+% \begin{minipage}[t]{0.4\textwidth}
+% \begin{flushright} \large
+% \emph{Supervisor:} \\
+% $if(book.supervisor.url)$%
+% \href{$book.supervisor.url$}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+% $else$%
+% \supname
+% $endif$
+% \end{flushright}
+% \end{minipage}\\[3cm]
  
-\vfill
+% \vfill
 
-$if(date)$
-{\large $date$}\\[4cm] % Date
-$endif$
-
-$if(cover-image)$
-\includegraphics{$cover-image$} % University/department logo
-$endif$
+% \large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+% \textit{in the}\\[0.4cm]
+% \groupname\\
+% \deptname\\[2cm] % Research group name and department name
  
-\vfill
-\end{center}
-\end{titlepage}
+% \vfill
 
-%----------------------------------------------------------------------------------------
-%	DECLARATION PAGE
-%----------------------------------------------------------------------------------------
-$if(book.declaration)$
-\begin{declaration}
-\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
-$if(book.declaration.text)$
-$book.declaration.text$
-$else$
-\input{"$book.declaration$"}
-$endif$
+% $if(date)$
+% {\large $date$}\\[4cm] % Date
+% $endif$
 
-\end{declaration}
+% $if(cover-image)$
+% \includegraphics{$cover-image$} % University/department logo
+% $endif$
+ 
+% \vfill
+% \end{center}
+% \end{titlepage}
 
-\cleardoublepage
-$endif$
+% %----------------------------------------------------------------------------------------
+% %	DECLARATION PAGE
+% %----------------------------------------------------------------------------------------
+% $if(book.declaration)$
+% \begin{declaration}
+% \addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+% $if(book.declaration.text)$
+% $book.declaration.text$
+% $else$
+% \input{"$book.declaration$"}
+% $endif$
 
-$if(book.quotation)$
-%----------------------------------------------------------------------------------------
-%	QUOTATION PAGE
-%----------------------------------------------------------------------------------------
+% \end{declaration}
 
-\vspace*{0.2\textheight}
+% \cleardoublepage
+% $endif$
 
-$if(book.quotation.text)$
-\noindent"{\itshape $book.quotation.text$}"\bigbreak
+% $if(book.quotation)$
+% %----------------------------------------------------------------------------------------
+% %	QUOTATION PAGE
+% %----------------------------------------------------------------------------------------
 
-\hfill $book.quotation.attribution$
-$else$
-\input{"$book.quotation$"}
-$endif$
+% \vspace*{0.2\textheight}
 
-$endif$
+% $if(book.quotation.text)$
+% \noindent"{\itshape $book.quotation.text$}"\bigbreak
 
-$if(abstract)$
-%----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
-%----------------------------------------------------------------------------------------
+% \hfill $book.quotation.attribution$
+% $else$
+% \input{"$book.quotation$"}
+% $endif$
 
-\begin{abstract}
-\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-$abstract$
-\end{abstract}
+% $endif$
 
-$endif$
+% $if(abstract)$
+% %----------------------------------------------------------------------------------------
+% %	ABSTRACT PAGE
+% %----------------------------------------------------------------------------------------
 
-$if(book.acknowledgements)$
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
+% \begin{abstract}
+% \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+% $abstract$
+% \end{abstract}
 
-\begin{acknowledgements}
-\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-$if(book.acknowledgements.text)$
-$book.acknowledgements.text$
-$else$
-\input{"$book.acknowledgements$"}
-$endif$
-\end{acknowledgements}
+% $endif$
 
-$endif$
+% $if(book.acknowledgements)$
+% %----------------------------------------------------------------------------------------
+% %	ACKNOWLEDGEMENTS
+% %----------------------------------------------------------------------------------------
 
-% $--	LIST OF CONTENTS/FIGURES/TABLES PAGES
+% \begin{acknowledgements}
+% \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+% $if(book.acknowledgements.text)$
+% $book.acknowledgements.text$
+% $else$
+% \input{"$book.acknowledgements$"}
+% $endif$
+% \end{acknowledgements}
 
-\tableofcontents % Prints the main table of contents
+% $endif$
 
-\listoffigures % Prints the list of figures
+% % $--	LIST OF CONTENTS/FIGURES/TABLES PAGES
 
-\listoftables % Prints the list of tables
+% \tableofcontents % Prints the main table of contents
 
-$if(book.abbreviations)$
-%----------------------------------------------------------------------------------------
-%	ABBREVIATIONS
-%----------------------------------------------------------------------------------------
+% \listoffigures % Prints the list of figures
 
-\input{"$book.abbreviations$"}
+% \listoftables % Prints the list of tables
 
-$endif$
+% $if(book.abbreviations)$
+% %----------------------------------------------------------------------------------------
+% %	ABBREVIATIONS
+% %----------------------------------------------------------------------------------------
 
-$if(book.constants)$
-%----------------------------------------------------------------------------------------
-%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
-%----------------------------------------------------------------------------------------
+% \input{"$book.abbreviations$"}
 
-\input{"$book.constants$"}
+% $endif$
 
-$endif$
+% $if(book.constants)$
+% %----------------------------------------------------------------------------------------
+% %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+% %----------------------------------------------------------------------------------------
 
-$if(book.symbols)$
-%----------------------------------------------------------------------------------------
-%	SYMBOLS
-%----------------------------------------------------------------------------------------
+% \input{"$book.constants$"}
 
-\input{"$book.symbols$"}
+% $endif$
 
-$endif$
+% $if(book.symbols)$
+% %----------------------------------------------------------------------------------------
+% %	SYMBOLS
+% %----------------------------------------------------------------------------------------
 
-$if(book.dedication)$
-%----------------------------------------------------------------------------------------
-%	DEDICATION
-%----------------------------------------------------------------------------------------
+% \input{"$book.symbols$"}
 
-\dedicatory{\input{"$book.dedication$"}} 
+% $endif$
 
-$endif$
+% $if(book.dedication)$
+% %----------------------------------------------------------------------------------------
+% %	DEDICATION
+% %----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-%	THESIS CONTENT - CHAPTERS
-%----------------------------------------------------------------------------------------
+% \dedicatory{\input{"$book.dedication$"}} 
 
-\mainmatter % Begin numeric (1,2,3...) page numbering
+% $endif$
 
-\pagestyle{thesis} % Return the page headers back to the "thesis" style
+% %----------------------------------------------------------------------------------------
+% %	THESIS CONTENT - CHAPTERS
+% %----------------------------------------------------------------------------------------
+
+% \mainmatter % Begin numeric (1,2,3...) page numbering
+
+% \pagestyle{thesis} % Return the page headers back to the "thesis" style

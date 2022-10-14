@@ -3,21 +3,23 @@
 % ---
 \titulo{$title$}
 \autor{$author$}
-\local{$book.abnt.local$}
-$if(book.abnt.data)$
-\data{$book.abnt.data$}
+\local{$abnt.local$}
+$if(abnt.data)$
+\data{$abnt.data$}
 $else$
-\data{$book.date$}
+\data{$abnt.date$}
 $endif$
-\orientador{$book.abnt.orientador$}
-$if(book.abnt.coorientador)$
-\coorientador{$book.abnt.coorientador$}
+\orientador{$abnt.orientador$}
+$if(abnt.coorientador)$
+\coorientador{$abnt.coorientador$}
 $endif$
-\instituicao{$book.abnt.instituicao$}
-\tipotrabalho{$book.abnt.tipotrabalho$}
+\instituicao{$abnt.instituicao$}
+\tipotrabalho{$abnt.tipotrabalho$}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
-\preambulo{Modelo canônico de trabalho monográfico acadêmico em conformidade com
-as normas ABNT apresentado à comunidade de usuários \LaTeX.}
+\preambulo{$abnt.preambulo$}
+
+\setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$5$endif$} 
+
 % ---
 

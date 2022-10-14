@@ -33,12 +33,19 @@ contributes:
         template-partials:
           - partials/title.tex
           - partials/in-header.tex
-        #   - partials/before-body.tex
-        #   - partials/definitions.tex    
-        # include-before-body:
-        #   - partials/definitions.tex
+          - partials/before-body.tex
+          - partials/definitions.tex
+        include-before-body:
+          - partials/definitions.tex
         include-in-header:
           - partials/in-header.tex
+        geometry:
+          - paper=a4paper
+          - inner=3cm
+          - outer=2cm
+          - top=3cm
+          - bottom=2cm
+        toc: false
         cite-method: natbib
         natbiboptions: numbers        # referências bibliográficas com citação numérica, para citação alfabética por autor-data use alf
         biblio-style: abntex2-num.bst # referências bibliográficas com citação numérica, para citação alfabética por autor-data use abntex-alf.bst

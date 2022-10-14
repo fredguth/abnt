@@ -2,8 +2,8 @@ project:
   type: abnt-thesis
 
 book:
-  title: "Modelo Canônico de Tese ABNT" 
-  author: "Fred Guth" 
+  title: "Modelo Canônico de Tese ABNT"
+  author: "Fred Guth"
   date: "2022-10-12"
   date-format: YYYY
   chapters:
@@ -11,20 +11,37 @@ book:
     - intro.qmd
     - summary.qmd
     - references.qmd
-  # abnt:
+bibliography: references.bib
+abnt:
   local: "Brasil"
-  # data: # sobrepoe a data automática com o texto que estiver aqui
+  data: # sobrepoe a data automática com o texto que estiver aqui
   orientador: "Prof. Dr. Fulano de Tal"
   coorientador: "Prof. Dr. Sicrano da Val" # opcional
   tipotrabalho: "Tese de Doutorado"
-  instituicao: "Universidade do Brasil -- UBr\\Faculdade de Arquitetura da Informação\\Programa de Pós Graduação"
+  instituicao: Frontmatter/instituicao.qmd
   preambulo: "Modelo canônico de tese em conformidade com as normas da ABNT NBR 14724:2011."
-
-bibliography: references.bib
-
+  # fichacatalografica: # nome do pdf da ficha catalográfica
+  # folha de aprovacao: # nome do pdf da folha de aprovacao
 format:
   html:
     theme: cosmo
+  pdf:
+    include-in-header: 
+      text: |
+        \usepackage{lipsum}
+
+
+
+
+
+
+
+# 
+# project:
+#   type: book
+#   output-dir: .
+#   output-file: "Thesis"
+
 # book:
 #   title: A doctoral thesis title
 #   author:
@@ -50,3 +67,25 @@ format:
 #   abbreviations: "Frontmatter/abbreviations.tex"
 #   symbols: "Frontmatter/symbols.tex"
 #   dedication: "Frontmatter/dedication.tex"
+#   chapters:
+#     - index.qmd
+#     - Chapters/Chapter2.qmd
+#     - references.qmd
+#   appendices:
+#     - Appendices/AppendixA.qmd
+
+#   site-url: https://nmfs-opensci.github.io/quarto-thesis/
+#   repo-url: https://github.com/nmfs-opensci/quarto-thesis
+#   repo-actions: [edit, source, issue]
+#   search: true
+
+# bibliography: [example.bib]
+
+# execute:
+#   echo: false
+#   code-overflow: wrap
+
+# format:
+#   quarto-thesis-pdf: 
+#     urlcolor: blue
+#     toc-depth: 2
